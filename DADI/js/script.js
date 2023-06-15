@@ -89,11 +89,11 @@ function rollDice() {
 
     if (playerScore > computerScore){   // se il player vince allora impostiamo il colore verde e la scritta adiacente.
         playerDiv.style.backgroundColor = "green"
-        showResult("Hai Vinto, Stupidissimo Umano!");
+        showResult("FOSSAAA A OMAAA ALEE ALEE ALEEE!");
     }
     else if (playerScore < computerScore){  // se il computer vince allora impostiamo il colore verde e la scritta adiacente.
         computerDiv.style.backgroundColor = "green";
-        showResult("Ha Vinto il Computer, Looooooser!");
+        showResult("Ha Vinto a Lazie... ma davero regà?");
     }
     else{
         playerDiv.style.backgroundColor = "yellow"; // nel caso di pareggio allora, uscirà la scritta sotto impostata ed il colore giallo!
