@@ -102,6 +102,27 @@ function rollDice() {
     }
 
 }
+//funzione per resettare il gioco
+
+function resetGame(){
+    let resultDiv = document.getElementById('result'); // otteniamo l'elemento result direttamente dall'html
+    resultDiv.innerHTML = ""; // svuoto il contenuto dal result
+    resultDiv.style.backgroundColor = "white"; //impostiamo lo sfondo a bianco
+
+    // otteniamo dall'html gli elementi player e computer
+    let playerDiv = document.getElementById('player');
+    let computerDiv = document.getElementById('computer');
+
+    playerDiv.innerHTML = "";//scuotiamo il contenuto da player
+    computerDiv.innerHTML = "";//svuotiamo il contenuto da computer
+
+    //impostiamo lo sfondo durante il reset a viola
+    playerDiv.style.backgroundColor = "purple";
+    computerDiv.style.backgroundColor = "purple";
+}
 
 // event listner per rollare i dadi:
 document.getElementById('play-btn').addEventListener('click', rollDice);
+
+// event listner per il reset
+document.getElementById("reset-btn").addEventListener('click', resetGame);
