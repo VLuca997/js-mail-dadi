@@ -71,7 +71,7 @@ function showResult(result) { // result è il paramentro che rappresenterà il r
     }
 }
 
-
+//Generiamo numeri casuali e li attribuiamo ai rispettivi elementi con aggiunta di stile
 function rollDice() {
     let playerScore = getRandomNumber (1, 6); // Genera un punteggio casuale per il giocatore
     let computerScore = getRandomNumber (1, 6);// Genera un punteggio casuale per il computer
@@ -96,7 +96,7 @@ function rollDice() {
         showResult("Ha Vinto il Computer, Looooooser!");
     }
     else{
-        playerDiv.style,backgroundColor = "yellow"; // nel caso di pareggio allora, uscirà la scritta sotto impostata ed il colore giallo!
+        playerDiv.style.backgroundColor = "yellow"; // nel caso di pareggio allora, uscirà la scritta sotto impostata ed il colore giallo!
         computerDiv.style.backgroundColor = "yellow";
         showResult("è Patta Signori!");
     }
