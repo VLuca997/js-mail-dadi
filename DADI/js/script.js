@@ -32,10 +32,25 @@
 
 // Event listener per il pulsante "Reset"
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //generiamo un numero casuale:
 function getRandomNumber(min, max) {
 
-    return Math.floor(Math.random() * (min, max + 1)) + min;  // la funzione scritta restituisce un numero casuale tra il minimo e il massimo. (1 / 6 da aggiungere in seguito)
+    return Math.floor(Math.random() * (max - min + 1)) + min;  // la funzione scritta restituisce un numero casuale tra il minimo e il massimo. (1 / 6 da aggiungere in seguito)
 }
 
 //funzione per vedere il risultato
@@ -45,10 +60,10 @@ function showResult(result) { // result è il paramentro che rappresenterà il r
 
     resultDiv.innerHTML = result; // impostiamo il contenuto html con il valore del parametro result
 
-    if(result === "Hai Vinto, Stupidissimo Umano!"){
+    if (result === "Hai Vinto, Stupidissimo Umano!"){
         resultDiv.style.backgroundColor ="green"; // se vince impsota il colore della barra dei risultati a Verde
     }
-    else if(result === "Ha Vinto il Computer, Looooooser!"){ 
+    else if (result === "Ha Vinto il Computer, Looooooser!"){ 
         resultDiv.style.backgroundColor = "green"; // se vince impsota il colore della barra dei risultati a Verde
     }
     else {
@@ -58,17 +73,35 @@ function showResult(result) { // result è il paramentro che rappresenterà il r
 
 
 function rollDice() {
-    let playScore = getRandomNumber (1, 6); // Genera un punteggio casuale per il giocatore
+    let playerScore = getRandomNumber (1, 6); // Genera un punteggio casuale per il giocatore
     let computerScore = getRandomNumber (1, 6);// Genera un punteggio casuale per il computer
 
     let playerDiv = document.getElementById('player');// selezioniamo l'elemento HTML del player
     let computerDiv = document.getElementById('computer'); // selezioniamo l'elemento html del computer
 
-    playerDiv.innerHTML = playScore;    // impostiamo il punteggio del player come contenuto nell'elemento dell'html
+    playerDiv.innerHTML = playerScore;    // impostiamo il punteggio del player come contenuto nell'elemento dell'html
     computerDiv.innerHTML = computerScore; // impostiamo il punteggio del computer come contenuto nell'elemento dell'html
 
     playerDiv.style.backgroundColor = "red"; // impostiamo lo sfondo dell'elemento html a rosso ( servirà per la sconfitta )
     computerDiv.style.backgroundColor = "red"; // impostiamo lo sfondo dell'elemento html a rosso ( servirà per la sconfitta )
-    
+
+
+
+    if (playerScore > computerScore){   // se il player vince allora impostiamo il colore verde e la scritta adiacente.
+        playerDiv.style.backgroundColor = "green"
+        showResult("Hai Vinto, Stupidissimo Umano!");
+    }
+    else if (playerScore < computerScore){  // se il computer vince allora impostiamo il colore verde e la scritta adiacente.
+        computerDiv.style.backgroundColor = "green";
+        showResult("Ha Vinto il Computer, Looooooser!");
+    }
+    else{
+        playerDiv.style,backgroundColor = "yellow"; // nel caso di pareggio allora, uscirà la scritta sotto impostata ed il colore giallo!
+        computerDiv.style.backgroundColor = "yellow";
+        showResult("è Patta Signori!");
+    }
 
 }
+
+// event listner per rollare i dadi:
+document.getElementById('play-btn').addEventListener('click', rollDice);
