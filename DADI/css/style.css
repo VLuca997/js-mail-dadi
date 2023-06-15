@@ -1,0 +1,74 @@
+/*
+
+        HEADER
+
+*/
+
+
+html{
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+        
+}
+
+
+
+
+/*
+
+        MAIN
+
+*/
+
+#container-general {
+        margin: 50px 0;
+        text-align: center;
+        display:flex;
+        justify-content:center;
+
+
+
+}
+
+#player,
+#computer {
+
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        background-color: purple;
+        border: 2px solid black;
+}
+
+#result {
+        font-size: 24px;
+        margin-bottom: 30px;
+        padding: 10px;
+}
+
+button {
+        font-size: 18px;
+        padding: 10px 20px;
+        margin: 10px;
+}
+
+
+
+
+
+
+
+/*
+
+        FOOTER
+
+*/
+
+
+
+
+/*
+
+        DEBUG
+
+*/
