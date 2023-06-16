@@ -35,10 +35,15 @@ document.getElementById('login').addEventListener('submit', function(event) {
     }
     if (approved) { //se approva allora stampa CONSENTITO
         showMessage('Accesso consentito!');
+        openLink(); //funzione del metodo windows.open()
     } else { //altrimenti stampa NEGATO
         showMessage('Accesso negato!');
     }
 });
 function showMessage(message) {
     document.querySelector('#message').innerText = message;//stampiamo a schermo il risultaoto del nostro login
+}
+
+function openLink() { //apriamo il link magggico
+    window.open('https://www.youtube.com/watch?v=CHgPt5MGryI', '_blank');
 }
